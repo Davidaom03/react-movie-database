@@ -11,12 +11,16 @@ import Grid from '../components/Grid/gridIndex';
 import Image from '../components/Thumb/thumbIndex';
 import Spinner from '../components/Spinner/spinnerIndex';
 import SearchBar from "./SearchBar/searchBarIndex";
+import Button from "../components/Button/buttonIndex";
 
 import { nanoid } from 'nanoid';
 import Thumb from "../components/Thumb/thumbIndex";
 
  const Home = () => {
-    const {state, loading, error, searchTerm, setSearchTerm} = useHomeFetch();
+    const {state, loading, error, searchTerm, setSearchTerm, setLoadMore} = useHomeFetch();
+
+    if(error) return <div>Something Went Wrong . . .</div>;
+    
 
     return (
         <>
@@ -42,7 +46,9 @@ import Thumb from "../components/Thumb/thumbIndex";
                         />
                 ))}
             </Grid>
-            <Spinner />
+            {loading && <Spinner /> }
+            {state.page < state.total_pages && !loading && 
+                (<Button text='Load More' callBack={ () => setLoadMore(true)}/>)}
         </>
     );
 }
