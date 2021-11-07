@@ -1,9 +1,10 @@
 import React from "react";
-import { Image } from "./Thumb.styles";
+import { Image, Text } from "./Thumb.styles";
 
-const Thumb = ({image, movieId, clickable}) => (
+const Thumb = ({image, movieName, movieId, clickable}) => (
     <div>
         <Image src={image} alt='movie-thumb' />
+        <Text >{movieName}</Text>
     </div>
 );
 
