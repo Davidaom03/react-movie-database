@@ -42,7 +42,7 @@ import Thumb from "../components/Thumb/thumbIndex";
                                 IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path 
                                 : NoImage 
                         }
-                        movieId={movie.Id}
+                        movieId={movie.id}
                         />
                 ))}
             </Grid>
