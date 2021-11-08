@@ -8,10 +8,12 @@ import Spinner from '../components/Spinner/spinnerIndex';
 import BreadCrumb from "./BreadCrumb/breadCrumbIndex";
 import MovieInfo from "./MovieInfo/movieInfoIndex";
 import MovieInfoBar from "./MovieInfoBar/movieInfoBarIndex";
+import Actor from "./Actor/actorIndex";
 // Hook
 import { useMovieFetch } from '../hooks/useMovieFetch';
 // Image
 import NoImage from '../images/no_image.jpg'
+import { nanoid } from "nanoid";
 
 const Movie = () => {
     const { movieId } = useParams();
@@ -30,6 +32,21 @@ const Movie = () => {
                 budget={movie.budget} 
                 revenue={movie.revenue} 
             />
+            <Grid header='Actors'>
+                {movie.actors.map(actor => (
+                    <Actor 
+                        key={nanoid()} 
+                        name={actor.name}
+                        character={actor.character}
+                        imageUrl={
+                            actor.profile_path ?
+                            `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
+                            : NoImage
+                        }
+                    />
+                ))}
+            </Grid>
+
         </>
     );
     

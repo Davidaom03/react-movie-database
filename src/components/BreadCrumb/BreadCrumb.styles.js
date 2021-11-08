@@ -14,7 +14,7 @@ export const Content = styled.div`
     display: flex;
     width: 100%;
     max-width: var(--maxWidth);
-    padding: 0 20%;
+    padding: 0 3%;
 
     span {
         font-size: var(--fontMed);
@@ -23,7 +23,11 @@ export const Content = styled.div`
 
         @media screen and (max-width: 768px){
             font-size: var(--fontSmall);
-            padding: 0 15%;
+            padding-right: 5px;
+        }
+
+        @media screen and (max-width: 500px){
+            margin-left: 2%;
         }
     }
 `;
