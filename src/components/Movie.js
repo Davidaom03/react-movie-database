@@ -7,11 +7,11 @@ import Grid from '../components/Grid/gridIndex';
 import Spinner from '../components/Spinner/spinnerIndex';
 import BreadCrumb from "./BreadCrumb/breadCrumbIndex";
 import MovieInfo from "./MovieInfo/movieInfoIndex";
+import MovieInfoBar from "./MovieInfoBar/movieInfoBarIndex";
 // Hook
 import { useMovieFetch } from '../hooks/useMovieFetch';
 // Image
 import NoImage from '../images/no_image.jpg'
-import { render } from "@testing-library/react";
 
 const Movie = () => {
     const { movieId } = useParams();
@@ -25,6 +25,11 @@ const Movie = () => {
         <>
             <BreadCrumb movieTitle={movie.original_title} />
             <MovieInfo movie={movie} />
+            <MovieInfoBar 
+                time={movie.runtime} 
+                budget={movie.budget} 
+                revenue={movie.revenue} 
+            />
         </>
     );
     
