@@ -2,7 +2,7 @@ import React from "react";
 import { Image, Text } from "./Thumb.styles";
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
-
+import PropTypes from "prop-types";
 
 const Thumb = ({image, movieName, movieId, clickable}) => (
     <div>
@@ -18,5 +18,11 @@ const Thumb = ({image, movieName, movieId, clickable}) => (
         )}
     </div>
 );
+
+Thumb.propTypes = {
+    image: PropTypes.string.isRequired,
+    movieId: PropTypes.number,
+    clickable: PropTypes.bool.isRequired
+}
 
 export default Thumb;

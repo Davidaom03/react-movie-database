@@ -4,7 +4,6 @@ import { calcTime, convertMoney } from '../../helpers';
 import { Wrapper, Content } from "./MovieInfoBar.styles";
 
 import PropTypes from 'prop-types';
-import MovieInfo from "../MovieInfo/movieInfoIndex";
 
 const MovieInfoBar = ({ time, budget, revenue }) => (
 

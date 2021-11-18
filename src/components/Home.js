@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 //config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config'
 //Hook
@@ -8,7 +8,7 @@ import NoImage from '../images/no_image.jpg'
 //components
 import HeroImage from "./HeroImage/heroImageIndex";
 import Grid from '../components/Grid/gridIndex';
-import Image from '../components/Thumb/thumbIndex';
+//import Image from '../components/Thumb/thumbIndex';
 import Spinner from '../components/Spinner/spinnerIndex';
 import SearchBar from "./SearchBar/searchBarIndex";
 import Button from "../components/Button/buttonIndex";
