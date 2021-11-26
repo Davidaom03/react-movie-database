@@ -41,10 +41,12 @@ class Home extends React.Component {
                 loading: true
             });
 
+            console.log('page: ' + page);
             const movies = await API.fetchMovies(searchTerm, page);
-
+            console.log('movies');
+            console.log(movies);
             this.setState( prev => ({
-                ...prev,
+                ...prev.movies,
                 movies: {
                     ...movies,
                     results:
